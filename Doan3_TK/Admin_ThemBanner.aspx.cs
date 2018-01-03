@@ -98,7 +98,7 @@ namespace Doan3_TK
 
             if (hinhanh.Length < 1)
             {
-                Response.Write("<script language='javascript'>alert('" + "Chưa có hình ảnh tin tức" + "')</script>");
+                Response.Write("<script language='javascript'>alert('" + "Chưa có hình ảnh" + "')</script>");
                 return;
             }
             try
