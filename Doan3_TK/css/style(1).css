@@ -1,0 +1,127 @@
+.contact-sendmail-single {
+    background: rgba(0, 0, 0, 0) url("../images/image-contact-form-mail.png") no-repeat scroll 0 0;
+    height: 447px;
+    margin: 25px 0px;
+    max-width: 610px;
+    z-index: 9999;
+    width: 100%;
+    border-radius:0px 0px 23px 23px;
+}
+.fix_position.contact-sendmail-single{
+    position: fixed;
+    left: 26%;
+    top: 100px;
+}
+.home .contact-sendmail-single,.archive .contact-sendmail-single,.search .contact-sendmail-single{
+    position: fixed;
+    left: 26%;
+    display: none;
+    top: 100px;
+}
+.contact-sendmail-single #form-sendmail {
+  background: white none repeat scroll 0 0;
+  border-radius: 12px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 114px;
+  padding-bottom: 4px;
+  padding-left: 13px;
+  padding-top: 17px;
+  width: 222px;
+}
+.contact-sendmail-single input {
+  background: #f8f8f8 none repeat scroll 0 0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  height: 26px;
+  margin-top: 6px;
+  padding: 0 5px;
+  width: 93%;
+}
+.contact-sendmail-single  textarea {
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  height: 71px;
+  margin-bottom: 4px;
+  margin-top: 10px;
+  outline: medium none;
+  padding: 7px;
+  width: 93%;
+}
+.contact-sendmail-single input.btn-submit {
+  background: rgba(0, 0, 0, 0) url("../images/register.png") repeat scroll 0 0;
+  border: medium none;
+  clear: both;
+  display: block;
+  height: 32px;
+  margin: 7px auto 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  width: 96px;
+}
+.loading {
+  background: rgba(0, 0, 0, 0) url("../images/loading.gif") repeat scroll 0 0;
+  height: 64px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 68px;
+  width: 64px;
+} 
+.notification {
+  border: 1px solid;
+  border-radius: 6px;
+  color: green;
+  line-height: 19px;
+  margin-left: -5px;
+  margin-top: 12px;
+  padding: 3px;
+  text-align: center;
+  width: 95%;
+}
+.message-error {
+  color: red;
+  font-size: 13px;
+  padding: 3px 0;
+  text-align: center;
+}
+.btn-close {
+    background: rgba(0, 0, 0, 0) url("../images/pucb-close.png") no-repeat scroll 0 0;
+    cursor: pointer;
+    display: block;
+    height: 17px;
+    position: absolute;
+    right: 9px;
+    top: 12px;
+    width: 17px;
+}
+@media screen and (max-width: 640px) {
+    body  .contact-sendmail-single {
+      background: #dc4298 none repeat scroll 0 0;
+      height: 306px;
+      margin: 25px 0;
+      max-width: 610px;
+      padding-top: 15px;
+      width: 100%;
+    }
+    body .contact-sendmail-single #form-sendmail {
+      background: white none repeat scroll 0 0;
+      clear: both;
+      display: block;
+      float: none;
+      margin: 0 auto;
+      padding-bottom: 4px;
+      padding-left: 13px;
+      width: 93%;
+    }
+    body .title-form-sendmail-mobile{
+          display: block !important;
+          text-align: center;
+          color: white;
+          font: 600;
+          font-size: 17px;
+          padding-bottom: 10px;
+          text-transform: uppercase;
+    }
+}
+

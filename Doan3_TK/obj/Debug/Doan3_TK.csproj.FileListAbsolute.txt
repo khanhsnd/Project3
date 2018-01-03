@@ -1,0 +1,14 @@
+C:\Users\manhdh\Desktop\Doan3_TK\Doan3_TK\bin\Doan3_TK.dll
+C:\Users\manhdh\Desktop\Doan3_TK\Doan3_TK\bin\Doan3_TK.pdb
+C:\Users\manhdh\Desktop\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.dll
+C:\Users\manhdh\Desktop\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.pdb
+C:\Users\manhhy\Desktop\Doan3_TK_20151215\Doan3_TK\Doan3_TK\bin\Doan3_TK.dll
+C:\Users\manhhy\Desktop\Doan3_TK_20151215\Doan3_TK\Doan3_TK\bin\Doan3_TK.pdb
+C:\Users\manhhy\Desktop\Doan3_TK_20151215\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.dll
+C:\Users\manhhy\Desktop\Doan3_TK_20151215\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.pdb
+C:\Users\manhdh\Desktop\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.csprojResolveAssemblyReference.cache
+C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\bin\Doan3_TK.dll
+C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\bin\Doan3_TK.pdb
+C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.csprojResolveAssemblyReference.cache
+C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.dll
+C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.pdb

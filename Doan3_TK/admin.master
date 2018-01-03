@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Doan3_TK.admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .head {
+            width: 100%;
+            background-color: Black;
+            height: 50px;
+            padding-top: 20px;
+            padding-left: 20px;
+            font-size: x-large;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .menu {
+            width: 96%;
+            background-color: #808080;
+            height: 10px;
+            float: left;
+            padding: 15px;
+            margin-top: 2px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #ffffff;
+            margin-left: 1px;
+            border-top: thin solid #00ffd8;
+        }
+
+            .menu:hover {
+                background-color: #3236f7;
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body style="margin: auto">
+    <form id="form1" runat="server">
+        <div style="width: 100%;">
+
+
+            <div class="head">
+                <div style="float: left; margin-right: 30px; margin-top: 10px">
+                    Quản trị hệ thống
+                </div>
+
+                <div style="float: right; margin-right: 30px; margin-top: 10px">
+                    <asp:Button ID="butdangxuat" runat="server" Text="Đăng xuất" OnClick="butdangxuat_Click" />
+                </div>
+
+            </div>
+
+            <div style="width: 20%; height: 50px; float: left">
+                <a href="./QL_SanPham.aspx">
+
+                    <div class="menu">
+                        Quản lý sản phẩm
+                    </div>
+                </a>
+
+                <a href="./QL_TinTuc.aspx">
+
+                    <div class="menu">
+                        Quản lý tin tức
+                    </div>
+                </a>
+                <a href="./QL_DanhMuc.aspx">
+
+                    <div class="menu">
+                        Quản lý danh mục
+                    </div>
+                </a>
+
+
+                <a href="./QL_Banner.aspx">
+
+                    <div class="menu">
+                        Quản lý banner
+                    </div>
+                </a>
+
+                <a href="./QL_NguoiDung.aspx">
+                    <div class="menu">
+                        Quản lý người dùng
+                    </div>
+                </a>
+
+
+                <a href="./QL_DonHang.aspx">
+                    <div class="menu">
+                        Quản lý đơn hàng
+                    </div>
+                </a>
+            </div>
+            <div style="width: 76%; margin-top: 2px; margin-right: 2px; float: right">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>

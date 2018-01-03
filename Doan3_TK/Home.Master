@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Doan3_TK.Home" %>
+
+<%@ Register Src="~/control/banner.ascx" TagPrefix="uc1" TagName="banner" %>
+
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <%--   <script async="" src="./js/analytics.js"></script>
+    <script async="" charset="utf-8" src="./soud/saved_resource" type="text/javascript"></script>
+    <script async="" src="./js/analytics.js"></script>--%>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="http://cachtrimuntrungca.org/xmlrpc.php">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/styles_mobile.css">
+    <link rel="alternate" type="application/rss+xml" title=" » Feed" href="http://cachtrimuntrungca.org/feed">
+    <link rel="alternate" type="application/rss+xml" title=" » Comments Feed" href="http://cachtrimuntrungca.org/comments/feed">
+    <link rel="stylesheet" href="css/layerslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="soud/css">
+    <link rel="stylesheet" href="css/genericons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pagenavi-css.css">
+    <%--    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="js/layerslider.kreaturamedia.jquery.js"></script>
+    <script type="text/javascript" src="js/jquerytransit.js"></script>--%>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cachtrimuntrungca.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cachtrimuntrungca.org/wp-includes/wlwmanifest.xml">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
+    <script src="js/font.js"></script>
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .slider-big-top {
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #bx_pager {
+            bottom: 15px;
+            left: 38px;
+            position: absolute;
+        }
+
+            #bx_pager a {
+                border: 1px solid #000000;
+                display: block;
+                float: left;
+                height: 66px;
+                margin-right: 2px;
+                opacity: 0.8;
+                width: 99px;
+            }
+
+                #bx_pager a img {
+                    height: 66px;
+                    width: 99px;
+                }
+
+                #bx_pager a:hover {
+                    border: 1px solid #ffffff;
+                    opacity: 1;
+                }
+
+                #bx_pager a.active {
+                    border: 1px solid #ffffff;
+                    opacity: 1;
+                }
+    </style>
+    <style type="text/css" id="twentythirteen-header-css">
+        .site-header {
+            background-size: 1600px auto;
+        }
+    </style>
+
+
+    <style type="text/css"></style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="page" class="hfeed site">
+
+            <header id="masthead" class="site-header" role="banner">
+
+                <hgroup>
+
+                    <div class="logo">
+
+                        <a href="./web_trangchu.aspx">
+
+                            <img src="./images/logo.png">
+                        </a>
+
+                    </div>
+
+                    <div class="slogan">
+
+                        <img src="./images/slogan.png">
+                    </div>
+
+
+
+                    <div class="clear"></div>
+
+                </hgroup>
+
+                <div id="navbar" class="navbar">
+
+                    <nav id="site-navigation" class="navigation main-navigation" role="navigation">
+
+
+                        <%--   // menu cua a--%>
+                        <div class="menu-menu-trang-chu-container">
+                            <ul id="menu-menu-trang-chu" class="nav-menu">
+
+                                <li id="Li1" class="menu-item menu-item-type-taxonomy menu-item-object-category ">
+                                    <a href="./web_trangchu.aspx">Trang chủ
+                                    </a>
+
+                                </li>
+                                <asp:Repeater ID="rptdmcha" runat="server">
+                                    <ItemTemplate>
+                                        <li id="menu-item-4051" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4051">
+                                            <a href="./<%#genkdanhmuc(Eval("LoaiDM").ToString()) %><%#Eval("MaDM").ToString() %>">
+                                                <%#Eval("TenDM").ToString() %>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <asp:Repeater ID="rptdmcon" runat="server" DataSource='<%# danhmuccon(Eval("MaDM").ToString())%>'>
+                                                    <ItemTemplate>
+                                                        <li id="menu-item-5577" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5577">
+                                                            <a href="./<%#genkdanhmuc(Eval("LoaiDM").ToString()) %><%#Eval("MaDM").ToString() %>"><%#Eval("TenDM").ToString() %></a>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </ul>
+
+                                        </li>
+                                        <%-- cap 2--%>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+                                <li id="Li2" class="menu-item menu-item-type-taxonomy menu-item-object-category " style="float: right">
+                                    <a href="./Web_GioiHang.aspx">Giỏ hàng
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+                    </nav>
+
+
+                </div>
+
+
+            </header>
+
+            <uc1:banner runat="server" ID="banner" />
+
+
+
+            <div id="main" class="site-main" style="max-width: 1000px; margin: auto">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+                <div style="clear: both"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div style="clear: both"></div>
+            <div class="clear"></div>
+            <!-- #main -->
+
+            <footer id="colophon" class="site-footer" role="contentinfo">
+                <div class="margin-width">
+                    <div class="logo_footer box-footer">
+                        <a href="./images/Cách Trị mụn Trứng cá Hiệu Quả Tốt Nhất Nhanh Nhất.html">
+                            <img style="margin-top: 12px;" src="./images/logo.png">
+                        </a>
+                    </div>
+                    <div class="footer_info box-footer">
+                        <h3 class="widget-title">SẢN PHẨM CHĂM SÓC SỨC KHỎE MAI LINH</h3>
+                        <span class="">Địa chỉ</span>: Số 77 Trần Duy Hưng -Quận Cầu Giấy - Hà Nội<br>
+                        <span class="">Phone</span>: 094.681.7777 - Tel: 043.556.4377<br>
+                        <span class="">Email</span>: mailinh@gmail.com
+                 
+                    </div>
+                    <div style="position: absolute; top: -6948px; overflow: auto; width: 1301px;">
+                        <ul>
+                            <div class="copyright box-footer">
+                                <img src="./images/slogan.png">
+                                <ul class="social_footer">
+                                    <div itemscope="" itemtype="http://data-vocabulary.org/Recipe">
+                                    </div>
+
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="footer-copyright">
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- #page -->
+
+        <script type="text/javascript" src="./js/common.js"></script>
+        <script type="text/javascript" src="./js/jquery-easing-1.3.js"></script>
+        <script type="text/javascript" src="./js/layerslider.transitions.js"></script>
+        <script type="text/javascript" src="./js/jquery.form.min.js"></script>
+
+        <script type="text/javascript" src="./js/scripts.js"></script>
+        <script type="text/javascript" src="./js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src="./js/functions.js"></script>
+        <!--Start of Zopim Live Chat Script-->
+
+
+        <script type="text/javascript" src="./js/conversion.js">
+        </script>
+
+
+    </form>
+</body>
+</html>
