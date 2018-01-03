@@ -4,63 +4,87 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/form-elements.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <title>Đăng nhập</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <table style="width: 1024px; height: 530px; margin: auto">
-                <tr>
-                    <td style="width: 100%; height: 530px;">
-                        <div style="width: 552px; height: 85px; margin: auto; text-align: center">
-
-                            <asp:Label ID="Label1" runat="server" Text="HÃY ĐĂNG NHẬP ĐỂ TRUY CẬP TRANG QUẢNG TRỊ" Font-Size="Large" ForeColor="#000066" Font-Bold="True"></asp:Label>
-                        </div>
-                        <div style="width: 440px; height: 500px; margin: auto;">
-
-
-                            <div style="width: 440px; height: 270px; margin: auto; margin-top: 50px;">
-                                <div style="width: 440px; height: 270px; margin: auto; border: thin solid #ebe4e4; margin-top: 10px; background: url('./Images/1.jpg');">
-
-                                    <div style="width: 100%; height: 24px; margin-top: 10px; text-align: center; margin-bottom: auto;">
-
-                                        <asp:Label ID="TB" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-
-                                    </div>
-
-                                    <div style="width: 350px; height: 30px; margin: auto; margin-top: 20px; margin-right: 45px; margin-left: 45px">
-                                        <div style="width: 75px; height: 27px; margin: auto; float: left; text-align: right">
-                                            Tài khoản :
-                                        </div>
-                                        <div style="width: 240px; height: 27px; margin: auto; float: right; margin-right: 20px;">
-                                            <asp:TextBox ID="txtDN" runat="server" Width="100%"></asp:TextBox>
-                                        </div>
-                                    </div>
-
-                                    <div style="width: 350px; height: 30px; margin: auto; margin-top: 20px; margin-right: 45px; margin-left: 45px">
-                                        <div style="width: 74px; height: 27px; margin: auto; float: left; text-align: right">
-                                            Mật khẩu :
-                                        </div>
-                                        <div style="width: 240px; height: 27px; margin: auto; float: right; margin-right: 20px;">
-                                            <asp:TextBox ID="txtMK" runat="server" Width="100%" TextMode="Password"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                    <div style="width: 350px; height: 30px; margin: auto; margin-top: 20px; margin-right: 45px; margin-left: 45px">
-                                        <div style="width: 300px; height: 27px; margin: auto; text-align: center">
-                                            <asp:Button ID="butDangNhap" runat="server" Text="Đăng nhập" OnClick="butDangNhap_Click"  />
-                                        </div>
-
-                                    </div>
-                                </div>
+          <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Bootstrap</strong> Login Form</h1>
+                            <div class="description">
+                            	<asp:Label runat="server" id="TB"></asp:Label>
                             </div>
                         </div>
-
-                    </td>
-
-                </tr>
-
-            </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login to our site</h3>
+                            		<p>Enter your username and password to log on:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-key"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="" method="post" class="login-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-username">Username</label>
+                                        <asp:TextBox runat="server" id="txtDN" CssClass="form-username form-control"  placeholder="Username..."></asp:TextBox>
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        <asp:TextBox runat="server" id ="txtMK" placeholder="Password..." TextMode="Password" CssClass="form-password form-control"></asp:TextBox>
+                                    </div>
+                                    <asp:Button runat="server" id="butDangNhap" OnClick="butDangNhap_Click" CssClass="btn btn-success" Width="100%" Text="Đăng nhập" />
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<h3>...or login with:</h3>
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+	                        		<i class="fa fa-facebook"></i> Facebook
+	                        	</a>
+	                        	<a class="btn btn-link-1 btn-link-1-twitter" href="#">
+	                        		<i class="fa fa-twitter"></i> Twitter
+	                        	</a>
+	                        	<a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+	                        		<i class="fa fa-google-plus"></i> Google Plus
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </form>
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+        
 </body>
 </html>

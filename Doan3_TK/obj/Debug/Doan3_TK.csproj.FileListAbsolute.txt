@@ -12,3 +12,10 @@ C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\bin\Doan3_TK.pdb
 C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.csprojResolveAssemblyReference.cache
 C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.dll
 C:\Users\khanh\Desktop\Doan3_TK_20151218\Doan3_TK\Doan3_TK\obj\Debug\Doan3_TK.pdb
+D:\LOCAL\Project4\Doan3_TK\bin\Doan3_TK.dll.config
+D:\LOCAL\Project4\Doan3_TK\bin\Doan3_TK.dll
+D:\LOCAL\Project4\Doan3_TK\bin\Doan3_TK.pdb
+D:\LOCAL\Project4\Doan3_TK\obj\Debug\Doan3_TK.csprojResolveAssemblyReference.cache
+D:\LOCAL\Project4\Doan3_TK\obj\Debug\Doan3_TK.csproj.CoreCompileInputs.cache
+D:\LOCAL\Project4\Doan3_TK\obj\Debug\Doan3_TK.dll
+D:\LOCAL\Project4\Doan3_TK\obj\Debug\Doan3_TK.pdb

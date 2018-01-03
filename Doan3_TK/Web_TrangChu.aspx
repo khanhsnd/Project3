@@ -15,10 +15,10 @@
                         <ItemTemplate>
                             <div class="bh-show-item" style="min-height: 470px">
                                 <h3 class="h3-bh-show">
-                                    <a href="./Web_ChiTietSP.aspx?ma=<%# Eval("idsp").ToString() %>"><%#catxau( Eval("TenSP").ToString(),50) %></a>
+                                    <a href="./Web_ChiTietSP.aspx?ma=<%# Eval("idsp").ToString() %>"><%#Catxau( Eval("TenSP").ToString(),50) %></a>
                                 </h3>
                                 <p class="p-bh-show">
-                                    <%# catxau(Eval("GioiThieu").ToString(),100) %>
+                                    <%# Catxau(Eval("GioiThieu").ToString(),100) %>
                                 </p>
                                 <a class="lnk-bh-img" href="./Web_ChiTietSP.aspx?ma=<%# Eval("idsp").ToString() %>" style="border: thin solid #fc00b9">
                                     <img src="  <%# Eval("HinhAnh").ToString() %>" />
@@ -50,12 +50,13 @@
                         <article id="post-11312" class="list_news_item clearfix">
 
                             <div class="img_thumb">
-                                <a href="./Web_TinChiTiet.aspx?ma=<%#( Eval("MaTin").ToString()) %>" title="<%#catxau( Eval("tieude").ToString(),50) %>">
+                                <a href="./Web_TinChiTiet.aspx?ma=<%#( Eval("MaTin").ToString()) %>" title="<%#Catxau( Eval("tieude").ToString(),50) %>">
                                     <img width="311" height="292" src="<%#Eval("HinhAnh").ToString() %>" class="attachment-post-thumbnail wp-post-image">
                                 </a>
-                            &nbsp;</div>
+                                &nbsp;
+                            </div>
                             <h3>
-                                <a href="./Web_TinChiTiet.aspx?ma=<%#( Eval("MaTin").ToString()) %>" title="<%#catxau( Eval("tieude").ToString(),50) %>"><%#catxau( Eval("tieude").ToString(),50) %></a>
+                                <a href="./Web_TinChiTiet.aspx?ma=<%#( Eval("MaTin").ToString()) %>" title="<%#Catxau( Eval("tieude").ToString(),50) %>"><%#Catxau( Eval("tieude").ToString(),50) %></a>
                             </h3>
                             <div class="clear"></div>
                         </article>
