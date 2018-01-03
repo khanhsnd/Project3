@@ -45,7 +45,7 @@ namespace Doan3_TK
                     Session["TK"] = ds.Tables[0].Rows[0]["MaNG"].ToString();
                     Session["HoTen"] = ds.Tables[0].Rows[0]["HoTen"].ToString();
                     Session["Quyen"] = ds.Tables[0].Rows[0]["NhomQuyen"].ToString();
-                    Response.Redirect("./QL_SanPham.aspx");
+                    Response.Redirect("./Admin_Home.aspx");
                 }
                 catch { }
             }

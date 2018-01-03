@@ -2,33 +2,24 @@
 
 <%@ Register Src="~/control/banner.ascx" TagPrefix="uc1" TagName="banner" %>
 
-
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <%--   <script async="" src="./js/analytics.js"></script>
-    <script async="" charset="utf-8" src="./soud/saved_resource" type="text/javascript"></script>
-    <script async="" src="./js/analytics.js"></script>--%>
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="http://cachtrimuntrungca.org/xmlrpc.php">
-    <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/styles_mobile.css">
-    <link rel="alternate" type="application/rss+xml" title=" » Feed" href="http://cachtrimuntrungca.org/feed">
-    <link rel="alternate" type="application/rss+xml" title=" » Comments Feed" href="http://cachtrimuntrungca.org/comments/feed">
-    <link rel="stylesheet" href="css/layerslider.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="soud/css">
-    <link rel="stylesheet" href="css/genericons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pagenavi-css.css">
-    <%--    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate.min.js"></script>
-    <script type="text/javascript" src="js/layerslider.kreaturamedia.jquery.js"></script>
-    <script type="text/javascript" src="js/jquerytransit.js"></script>--%>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cachtrimuntrungca.org/xmlrpc.php?rsd">
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cachtrimuntrungca.org/wp-includes/wlwmanifest.xml">
+  
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="http://cachtrimuntrungca.org/xmlrpc.php"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles_mobile.css"/>
+    <link rel="alternate" type="application/rss+xml" title=" » Feed" href="http://cachtrimuntrungca.org/feed"/>
+    <link rel="alternate" type="application/rss+xml" title=" » Comments Feed" href="http://cachtrimuntrungca.org/comments/feed"/>
+    <link rel="stylesheet" href="css/layerslider.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="soud/css"/>
+    <link rel="stylesheet" href="css/genericons.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/pagenavi-css.css"/>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cachtrimuntrungca.org/xmlrpc.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cachtrimuntrungca.org/wp-includes/wlwmanifest.xml"/>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
 
@@ -90,6 +81,7 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <title>home</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -99,23 +91,14 @@
             <header id="masthead" class="site-header" role="banner">
 
                 <hgroup>
-
                     <div class="logo">
-
                         <a href="./web_trangchu.aspx">
-
                             <img src="./images/logo.png">
                         </a>
-
                     </div>
-
                     <div class="slogan">
-
                         <img src="./images/slogan.png">
                     </div>
-
-
-
                     <div class="clear"></div>
 
                 </hgroup>

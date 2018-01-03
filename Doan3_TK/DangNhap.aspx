@@ -28,7 +28,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Bootstrap</strong> Login Form</h1>
+                            <h1><strong>WEB</strong> Bán hàng</h1>
                             <div class="description">
                             	<asp:Label runat="server" id="TB"></asp:Label>
                             </div>
@@ -38,8 +38,8 @@
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
-                        			<h3>Login to our site</h3>
-                            		<p>Enter your username and password to log on:</p>
+                        			<h3>Đăng nhập để vào trang quản trị</h3>
+                            		<p>Vui lòng nhập đầy đủ thông tin để đăng nhập:</p>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-key"></i>
