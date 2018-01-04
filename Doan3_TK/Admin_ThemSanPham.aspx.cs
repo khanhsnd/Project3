@@ -22,13 +22,11 @@ namespace Doan3_TK
             try
             {
                 idsp = Request.QueryString["masp"].ToString();
-              
             }
             catch
             {
                 idsp = "0";
             }
-
 
             try
             {
@@ -43,20 +41,17 @@ namespace Doan3_TK
                 idsp = "0";
             }
 
-
-
             if (!IsPostBack)
             {
-                loadcontrol();
+                Init();
                 if (idsp != "0" && idsp != null)
                 {
-                    loaddata();
+                    Showdata();
                 }
             }
         }
-        protected void loadcontrol()
+        protected void Init()
         {
-
             ddldanhmuc.DataSource = dm.danhmucsp();
             ddldanhmuc.DataValueField = "madm";
             ddldanhmuc.DataTextField = "tendm";
@@ -67,7 +62,7 @@ namespace Doan3_TK
             ddltrangthai.Items.Insert(2, new ListItem("Cấm", "0"));
             ddltrangthai.SelectedValue = "1";
         }
-        protected void loaddata()
+        protected void Showdata()
         {
             DataSet ds = new DataSet();
             ds = sp.laysptheoma_admin(idsp);
@@ -80,7 +75,7 @@ namespace Doan3_TK
             ddldanhmuc.SelectedValue = ds.Tables[0].Rows[0]["MaDM"].ToString();
             txtsoluong.Text = ds.Tables[0].Rows[0]["SL"].ToString();
             imghinhanh.ImageUrl = ds.Tables[0].Rows[0]["HinhAnh"].ToString();
-            //txttensp.Text = ds.Tables[0].Rows[0]["HinhAnh"].ToString();
+          
 
         }
 
@@ -165,7 +160,7 @@ namespace Doan3_TK
                 else
                 {
                     Response.Write("<script language='javascript'>alert('" + "Cập nhật sản phẩm thành công" + "')</script>");
-                    loaddata();
+                    Showdata();
                 }
             }
             catch

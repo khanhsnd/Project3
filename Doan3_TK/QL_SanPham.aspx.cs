@@ -18,7 +18,7 @@ namespace Doan3_TK
             if (!IsPostBack)
             {
                 loadcontrol();
-                loaddata();
+                Showdata();
             }
         }
         protected void chkAll_CheckedChanged(object sender, EventArgs e)
@@ -34,38 +34,37 @@ namespace Doan3_TK
                 }
             }
         }
-        //protected void updatestt(int stt)
-        //{
-        //    int dem = 0;
-        //    for (int i = 0; i < grvsanpham.Rows.Count; i++)
-        //    {
-        //        GridViewRow objDataRow = grvsanpham.Rows[i];
-        //        bool isChecked = ((CheckBox)objDataRow.FindControl("chkBox")).Checked;
+        protected void updatestt(int stt)
+        {
+            int dem = 0;
+            for (int i = 0; i < rptData.Items.Count; i++)
+            {
+                RepeaterItem objDataRow = rptData.Items[i];
+                bool isChecked = ((CheckBox)objDataRow.FindControl("chkBox")).Checked;
 
 
-        //        if (isChecked)
-        //        {
-        //            dem++;
+                if (isChecked)
+                {
+                    dem++;
+                    HiddenField idsp = (HiddenField)rptData.Items[i].FindControl("idsp");
+                    sp.update_trangthai(idsp.Value, stt);
+                }
 
-                  
-        //            sp.update_trangthai(grvsanpham.Rows[i].Cells[1].Text, stt);
-        //        }
+            }
+            if (dem == 0)
+            {
+                Response.Write("<script language='javascript'>alert('" + "Chưa trọn đối tượng" + "')</script>");
 
-        //    }
-        //    if (dem == 0)
-        //    {
-        //        Response.Write("<script language='javascript'>alert('" + "Chưa trọn đối tượng" + "')</script>");
+                return;
+            }
+            else
+            {
 
-        //        return;
-        //    }
-        //    else
-        //    {
+                Response.Write("<script language='javascript'>alert('" + "Cập nhât thành công" + "')</script>");
 
-        //        Response.Write("<script language='javascript'>alert('" + "Cập nhât thành công" + "')</script>");
+            }
 
-        //    }
-
-        //}
+        }
 
         protected void loadcontrol()
         {
@@ -81,7 +80,7 @@ namespace Doan3_TK
             ddltrangthai.Items.Insert(2, new ListItem("Đã xóa", "0"));
             ddltrangthai.SelectedValue = "2";
         }
-        protected void loaddata()
+        protected void Showdata()
         {
             rptData.DataSource = sp.laytoanbosp(int.Parse(ddldanhmuc.SelectedValue), int.Parse(ddltrangthai.SelectedValue)).Tables[0];
             rptData.DataBind();
@@ -89,17 +88,8 @@ namespace Doan3_TK
         protected void ddldanhmuc_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            loaddata();
+            Showdata();
         }
-
-        protected void butxoa_Click(object sender, EventArgs e)
-        {
-            //updatestt(0);
-            loaddata();
-        }
-
-       
-
         //protected void grvsanpham_PageIndexChanging(object sender, GridViewPageEventArgs e)
         //{
         //    grvsanpham.PageIndex = e.NewPageIndex;
@@ -111,18 +101,18 @@ namespace Doan3_TK
             Response.Redirect("./Admin_ThemSanPham.aspx");
         }
 
-      
+
 
         protected void butduyet_Click(object sender, EventArgs e)
         {
-            //updatestt(2);
-            loaddata();
+            updatestt(2);
+            Showdata();
         }
 
         protected void butchoduyet_Click(object sender, EventArgs e)
         {
-            //updatestt(1);
-            loaddata();
+            updatestt(1);
+            Showdata();
         }
 
         protected void butsettop_Click(object sender, EventArgs e)
@@ -137,27 +127,34 @@ namespace Doan3_TK
                 if (isChecked)
                 {
                     dem++;
-                        HiddenField idsp = (HiddenField)rptData.Items[i].FindControl("idsp");
-                        sp.insert_spnoibat(idsp.Value);
+                    HiddenField idsp = (HiddenField)rptData.Items[i].FindControl("idsp");
+                    sp.insert_spnoibat(idsp.Value);
                 }
 
             }
             if (dem == 0)
             {
                 Response.Write("<script language='javascript'>alert('" + "Chưa trọn đối tượng" + "')</script>");
-
                 return;
             }
             else
             {
-
                 Response.Write("<script language='javascript'>alert('" + "Set top thành công" + "')</script>");
-
             }
 
-            loaddata();
+            Showdata();
         }
 
 
+        public void ControlCommand(object sender, CommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case ("Xoa"):
+                    sp.update_trangthai(e.CommandArgument.ToString(), 0);
+                    Showdata();
+                    break;
+            }
+        }
     }
 }

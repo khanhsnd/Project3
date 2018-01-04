@@ -22,15 +22,6 @@ namespace Doan3_TK {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
         /// txtmasp control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace Doan3_TK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmasp;
-        
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// txttensp control.
@@ -58,15 +40,6 @@ namespace Doan3_TK {
         protected global::System.Web.UI.WebControls.TextBox txttensp;
         
         /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
         /// ddldanhmuc control.
         /// </summary>
         /// <remarks>
@@ -74,15 +47,6 @@ namespace Doan3_TK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddldanhmuc;
-        
-        /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// txtgioithieu control.
@@ -103,15 +67,6 @@ namespace Doan3_TK {
         protected global::CKEditor.NET.CKEditorControl ckconten;
         
         /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-        
-        /// <summary>
         /// imghinhanh control.
         /// </summary>
         /// <remarks>
@@ -119,15 +74,6 @@ namespace Doan3_TK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imghinhanh;
-        
-        /// <summary>
-        /// Label7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// txtgiaban control.

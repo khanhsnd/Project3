@@ -77,7 +77,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <asp:LinkButton ID="butxoa2" OnClientClick="var cf = confirm('Bạn có chắc chắn muốn xóa dữ liệu ?'); if(cf == true){return true;} else{return false;}" runat="server" ToolTip="Xóa dữ liệu">
+                                            <asp:LinkButton ID="butxoa" OnClientClick="var cf = confirm('Bạn có chắc chắn muốn xóa dữ liệu ?');" runat="server" OnCommand="ControlCommand" CommandName="Xoa"   CommandArgument='<%#Eval("idsp")%>'>
                                                Xóa
                                             </asp:LinkButton>
                                         </li>
