@@ -3,74 +3,98 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 100%;">
-        <div style="width: 100%; padding-top: 10px; padding-left: 10px; height: 30px">
-            Danh sách sản phẩm
+    <div class="row">
+        <div class="col-xs-12" style="margin-left: 15px">
+            <h4>Danh sách sản phẩm</h4>
         </div>
-        <div style="width: 100%; padding-top: 10px; padding-left: 10px; height: 30px">
-            Danh mục :
-            <asp:DropDownList ID="ddldanhmuc" runat="server" Height="24px" Width="173px" AutoPostBack="true" OnSelectedIndexChanged="ddldanhmuc_SelectedIndexChanged">
-            </asp:DropDownList>
-            Trạng thái :
-            <asp:DropDownList ID="ddltrangthai" runat="server" Height="24px" Width="173px" AutoPostBack="true" OnSelectedIndexChanged="ddldanhmuc_SelectedIndexChanged">
-            </asp:DropDownList>
+        <div class="form-group" style="margin-left: 15px">
+            <div class="col-xs-1">Danh mục</div>
+            <div class="col-xs-4">
+                <asp:DropDownList ID="ddldanhmuc" runat="server" Height="24px" Width="173px" AutoPostBack="true" OnSelectedIndexChanged="ddldanhmuc_SelectedIndexChanged">
+                </asp:DropDownList>
+            </div>
+            <div class="col-xs-1">Trạng thái</div>
+            <div class="col-xs-4">
+                <asp:DropDownList ID="ddltrangthai" runat="server" Height="24px" Width="173px" AutoPostBack="true" OnSelectedIndexChanged="ddldanhmuc_SelectedIndexChanged">
+                </asp:DropDownList>
+            </div>
         </div>
-
-        <div style="width: 100%; padding-top: 10px; padding-left: 10px; height: 30px">
-            <asp:Button ID="butthemmoi" runat="server" Text="Thêm mới" Width="159px" OnClick="butthemmoi_Click" />
-             &nbsp;&nbsp;&nbsp;
-             </div>
+        <div class="form-group col-xs-12" style="margin-top: 15px">
+            <div class="col-xs-2">
+                <asp:Button ID="butthemmoi" runat="server" Text="Thêm mới" CssClass="btn btn-primary" OnClick="butthemmoi_Click" />
+            </div>
+            <div class="col-xs-2">
+                <asp:Button ID="butsettop" runat="server" Text="Set top" CssClass="btn btn-primary" OnClick="butsettop_Click" />
+            </div>
+            <div class="col-xs-2">
+                <asp:Button ID="butduyet" runat="server" Text="Duyệt" CssClass="btn btn-primary" OnClick="butduyet_Click" />
+            </div>
+            <div class="col-xs-2">
+                <asp:Button ID="butchoduyet" runat="server" Text="Chờ duyệt" CssClass="btn btn-primary" OnClick="butchoduyet_Click" />
+            </div>
+        </div>
         <div style="width: 99%; padding-top: 10px; padding-left: 10px">
-            <asp:GridView ID="grvsanpham" runat="server" AutoGenerateColumns="False" Width="100%" CellPadding="4" ForeColor="Black" GridLines="Vertical" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" AllowPaging="True" OnPageIndexChanging="grvsanpham_PageIndexChanging" >
-                <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:TemplateField>
-                        <HeaderTemplate>
-                            <asp:CheckBox ID="chkAll" runat="server" AutoPostBack="true" OnCheckedChanged="chkAll_CheckedChanged" />
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:CheckBox runat="server" ID="chkBox" />
-                        </ItemTemplate>
-                        <ItemStyle Width="3%" />
-                    </asp:TemplateField>
-                       <asp:BoundField DataField="idsp" HeaderText="ID sản phẩm" />
-                    <asp:BoundField DataField="masp" HeaderText="Mã sản phẩm" />
-                    <asp:BoundField DataField="TenSP" HeaderText="Tên sản phẩm" />
-                    <asp:BoundField DataField="SL" HeaderText="Số lượng" />
-                    <asp:BoundField DataField="GiaBan" HeaderText="Giá bán" />
-                    <asp:BoundField DataField="tendm" HeaderText="Danh mục" />
-                    <asp:ImageField DataImageUrlField="HinhAnh" DataImageUrlFormatString="{0}" HeaderText="Hình ảnh">
-                        <ControlStyle Width="110px" />
-                    </asp:ImageField>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <a href='./Admin_ThemSanPham.aspx?masp=<%#Eval("idsp")%>'>Sửa </a>
+            <table class="table table-mstyle table-data">
+                <tr>
+                    <th>
+                        <asp:CheckBox ID="chkAll" runat="server" AutoPostBack="true" OnCheckedChanged="chkAll_CheckedChanged" />
+                    </th>
+                    <th>ID</th>
+                    <th>Mã</th>
+                    <th>Tên</th>
+                    <th class="text-center">Số lượng</th>
+                    <th>Giá bán</th>
+                    <th>Danh mục</th>
+                    <th>Ảnh</th>
+                    <th>Chức năng</th>
+                </tr>
+                <asp:Repeater runat="server" ID="rptData">
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <asp:CheckBox runat="server" ID="chkBox" /></td>
+                            <td>
+                                <%#Eval("idsp") %>
+                                <asp:HiddenField runat="server" ID="idsp" Value='<%# Eval("idsp") %>'></asp:HiddenField>
+                            </td>
+                            <td><%# Eval("masp")%></td>
+                            <td><%# Eval("TenSP")%></td>
+                            <td class="text-center"><%# Eval("SL")%></td>
+                            <td><%# Eval("GiaBan")%></td>
+                            <td><%# Eval("tendm")%></td>
+                            <td>
+                                <img src="<%# Eval("HinhAnh")%>" width="50px" height="50px" /></td>
+                            <td>
+                                <div class="btn-group mr15">
+                                    <button data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle gexport" type="button" aria-expanded="false">
+                                        <i class="fa fa-gear"></i>
+                                        &nbsp;<span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                                        <li>
+                                            <a href='./Admin_ThemSanPham.aspx?masp=<%#Eval("idsp")%>'>Sửa 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="butxoa2" OnClientClick="var cf = confirm('Bạn có chắc chắn muốn xóa dữ liệu ?'); if(cf == true){return true;} else{return false;}" runat="server" ToolTip="Xóa dữ liệu">
+                                               Xóa
+                                            </asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton runat="server" ID="btnIn" OnClientClick="window.print();return false;">In </asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </table>
 
-                        </ItemTemplate>
-                        <HeaderStyle Width="5%" />
-                    </asp:TemplateField>
-                </Columns>
-
-                <FooterStyle BackColor="#CCCC99" />
-                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                <RowStyle BackColor="#F7F7DE" />
-                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                <SortedAscendingHeaderStyle BackColor="#848384" />
-                <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                <SortedDescendingHeaderStyle BackColor="#575357" />
-            </asp:GridView>
         </div>
 
-          <div style="width: 100%; padding-top: 10px; padding-left: 10px; height: 30px">
-            <asp:Button ID="butduyet" runat="server" Text="Duyệt" Width="100px" OnClick="butduyet_Click" />
-             &nbsp;&nbsp;&nbsp;
-             <asp:Button ID="butchoduyet" runat="server" Text="Chờ duyệt" Width="100px" OnClick="butchoduyet_Click" />
-               &nbsp;&nbsp;&nbsp;
-             <asp:Button ID="butxoa2" runat="server" Text="Xóa" Width="100px" OnClick="butxoa_Click" />
-                &nbsp;&nbsp;&nbsp;
-             <asp:Button ID="butsettop" runat="server" Text="Set top" Width="100px" OnClick="butsettop_Click"   />
+        <div style="width: 100%; padding-top: 10px; padding-left: 10px; height: 30px">
         </div>
     </div>
 </asp:Content>

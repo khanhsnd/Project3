@@ -63,7 +63,7 @@ public class cs_sanpham
         return ds;
     }
     
-    public DataSet laytoanbosp(string madm, int trangthai)
+    public DataSet laytoanbosp(int madm, int trangthai)
     {
         SqlConnection cn = new SqlConnection();
         string strconnect = ConfigurationManager.ConnectionStrings["strconnect"].ConnectionString;

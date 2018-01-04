@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,7 +26,7 @@ namespace Doan3_TK
             CheckBox chkAll = (CheckBox)sender;
             if (chkAll != null)
             {
-                foreach (GridViewRow row in grvsanpham.Rows)
+                foreach (RepeaterItem row in rptData.Items)
                 {
                     CheckBox chk = (CheckBox)row.FindControl("chkBox");
                     if (chk != null)
@@ -33,38 +34,38 @@ namespace Doan3_TK
                 }
             }
         }
-        protected void updatestt(int stt)
-        {
-            int dem = 0;
-            for (int i = 0; i < grvsanpham.Rows.Count; i++)
-            {
-                GridViewRow objDataRow = grvsanpham.Rows[i];
-                bool isChecked = ((CheckBox)objDataRow.FindControl("chkBox")).Checked;
+        //protected void updatestt(int stt)
+        //{
+        //    int dem = 0;
+        //    for (int i = 0; i < grvsanpham.Rows.Count; i++)
+        //    {
+        //        GridViewRow objDataRow = grvsanpham.Rows[i];
+        //        bool isChecked = ((CheckBox)objDataRow.FindControl("chkBox")).Checked;
 
 
-                if (isChecked)
-                {
-                    dem++;
+        //        if (isChecked)
+        //        {
+        //            dem++;
 
                   
-                    sp.update_trangthai(grvsanpham.Rows[i].Cells[1].Text, stt);
-                }
+        //            sp.update_trangthai(grvsanpham.Rows[i].Cells[1].Text, stt);
+        //        }
 
-            }
-            if (dem == 0)
-            {
-                Response.Write("<script language='javascript'>alert('" + "Chưa trọn đối tượng" + "')</script>");
+        //    }
+        //    if (dem == 0)
+        //    {
+        //        Response.Write("<script language='javascript'>alert('" + "Chưa trọn đối tượng" + "')</script>");
 
-                return;
-            }
-            else
-            {
+        //        return;
+        //    }
+        //    else
+        //    {
 
-                Response.Write("<script language='javascript'>alert('" + "Cập nhât thành công" + "')</script>");
+        //        Response.Write("<script language='javascript'>alert('" + "Cập nhât thành công" + "')</script>");
 
-            }
+        //    }
 
-        }
+        //}
 
         protected void loadcontrol()
         {
@@ -82,8 +83,8 @@ namespace Doan3_TK
         }
         protected void loaddata()
         {
-            grvsanpham.DataSource = sp.laytoanbosp(ddldanhmuc.SelectedValue, Convert.ToInt32(ddltrangthai.SelectedValue)).Tables[0];
-            grvsanpham.DataBind();
+            rptData.DataSource = sp.laytoanbosp(int.Parse(ddldanhmuc.SelectedValue), int.Parse(ddltrangthai.SelectedValue)).Tables[0];
+            rptData.DataBind();
         }
         protected void ddldanhmuc_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -93,17 +94,17 @@ namespace Doan3_TK
 
         protected void butxoa_Click(object sender, EventArgs e)
         {
-            updatestt(0);
+            //updatestt(0);
             loaddata();
         }
 
        
 
-        protected void grvsanpham_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            grvsanpham.PageIndex = e.NewPageIndex;
-            loaddata();
-        }
+        //protected void grvsanpham_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        //{
+        //    grvsanpham.PageIndex = e.NewPageIndex;
+        //    loaddata();
+        //}
 
         protected void butthemmoi_Click(object sender, EventArgs e)
         {
@@ -114,32 +115,30 @@ namespace Doan3_TK
 
         protected void butduyet_Click(object sender, EventArgs e)
         {
-            updatestt(2);
+            //updatestt(2);
             loaddata();
         }
 
         protected void butchoduyet_Click(object sender, EventArgs e)
         {
-            updatestt(1);
+            //updatestt(1);
             loaddata();
         }
 
         protected void butsettop_Click(object sender, EventArgs e)
         {
             int dem = 0;
-            for (int i = 0; i < grvsanpham.Rows.Count; i++)
+            for (int i = 0; i < rptData.Items.Count; i++)
             {
-                GridViewRow objDataRow = grvsanpham.Rows[i];
+                RepeaterItem objDataRow = rptData.Items[i];
                 bool isChecked = ((CheckBox)objDataRow.FindControl("chkBox")).Checked;
 
 
                 if (isChecked)
                 {
                     dem++;
-
-                  
-
-                    sp.insert_spnoibat(grvsanpham.Rows[i].Cells[1].Text);
+                        HiddenField idsp = (HiddenField)rptData.Items[i].FindControl("idsp");
+                        sp.insert_spnoibat(idsp.Value);
                 }
 
             }
@@ -159,6 +158,6 @@ namespace Doan3_TK
             loaddata();
         }
 
-       
+
     }
 }

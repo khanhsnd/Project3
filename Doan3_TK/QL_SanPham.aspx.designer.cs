@@ -40,13 +40,13 @@ namespace Doan3_TK {
         protected global::System.Web.UI.WebControls.Button butthemmoi;
         
         /// <summary>
-        /// grvsanpham control.
+        /// butsettop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvsanpham;
+        protected global::System.Web.UI.WebControls.Button butsettop;
         
         /// <summary>
         /// butduyet control.
@@ -67,21 +67,21 @@ namespace Doan3_TK {
         protected global::System.Web.UI.WebControls.Button butchoduyet;
         
         /// <summary>
-        /// butxoa2 control.
+        /// chkAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butxoa2;
+        protected global::System.Web.UI.WebControls.CheckBox chkAll;
         
         /// <summary>
-        /// butsettop control.
+        /// rptData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butsettop;
+        protected global::System.Web.UI.WebControls.Repeater rptData;
     }
 }
